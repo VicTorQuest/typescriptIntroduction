@@ -31,6 +31,7 @@ export const logPerson = (person: Person) => {
 }
 
 export const filterPersons = (person: Person[], personType: string, criteria:  { name: string; username: string; id: number; role?: string, department?: string}) : Person[] => {
+    // Fixing the function to return User[] or Admin[] depending on the personType argument
     if (personType ==  "user") {
         console.log(persons
             .filter((person) => person.type === personType))
@@ -42,6 +43,7 @@ export const filterPersons = (person: Person[], personType: string, criteria:  {
     .filter((person) => person.type === personType)
 }
 
+// Using partial user or admin objects based on the personType argument
 export const filteredUsers = filterPersons(persons, 'user', {name: 'Cristiano Ronaldo', username: "CR7suiiiiiii", id: 6, role: "Tutor"});
 export const filteredAdmins = filterPersons(persons, 'admin', {name: 'Micheal Jordan', username: 'MJ23GOAT', id: 6, department: 'Tutor'});
 
