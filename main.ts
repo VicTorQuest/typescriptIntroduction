@@ -30,7 +30,7 @@ export const logPerson = (person: Person) => {
   console.log(` - ${person.name}, ${person.id}, ${person.type === 'admin' ? person.role : person.department}`)
 }
 
-export const filterPersons = (person: Person[], personType: string, criteria:  { name: string; username: string; id: number; role?: string, department?: string}) : Person[] => {
+export const filterPersons = (person: Person[], personType: "user" | "admin", criteria:  { name: string; username: string; id: number; role?: string, department?: string}) : Person[] => {
     // Fixing the function to return User[] or Admin[] depending on the personType argument
     if (personType ==  "user") {
         console.log(persons
